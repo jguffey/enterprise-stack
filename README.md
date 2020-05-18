@@ -19,6 +19,7 @@ to Run in production: `docker-compose up --build`.
 
 ## Tree
 
+```
 .
 ├── README.md  (this file)
 ├── backend (all the backend services)
@@ -30,6 +31,7 @@ to Run in production: `docker-compose up --build`.
     ├── lib (shared resources for both apps)
     ├── marketing (static marketing site)
     └── spa (single page web application, UI for the app)
+```
 
 # TODO
 - [ ] Set up Dockerfiles
