@@ -1,17 +1,21 @@
 version: '3'
 services:
   marketing:
-    restart: unless-stopped
     build:
       context: ../ui/marketing
-    # Doesn't have to be on the netowkr.
+    networks:
+      - enterprise
     ports:
       - 8080:8080
-  # spa:
-  #   ports:
-  #     - 8001:8081
-  #   networks:
-  #     - enterprise
+    restart: unless-stopped
+  spa:
+    build:
+      context: ../ui/spa
+    networks:
+      - enterprise
+    ports:
+      - 8081:3000
+    # For some reason, the container is running on port, but port not being exposed.
   # db:
   #   # TODO, choose service, mount db volume
   #   networks:

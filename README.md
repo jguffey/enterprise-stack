@@ -15,7 +15,19 @@ you are using the right version of node.
 
 # Running
 
-to Run in production: `docker-compose up --build`.
+to Run in production:
+- `cd docker && docker-compose up --build`.
+- `docker-compose start`
+- `docker-compose logs -f`
+
+to stop:
+- `docker-compose down`
+
+# Debugging
+
+To attach to any running container, try
+`docker exec -it {id} /bin/bash`
+where {id} is replaced with your running container
 
 ## Tree
 
@@ -36,12 +48,21 @@ to Run in production: `docker-compose up --build`.
 # TODO
 - [ ] Set up Dockerfiles
   - [x] for marketing
-  - [ ] for spa
+  - [x] for spa
   - [ ] for database
   - [ ] for api
-- [ ] Ensure all images that need to talk can do so.
 - [ ] Connect the Web SPA to the backend service
+- [ ] Set up a development docker-compose script that
+  - [ ] supports hot reloading for the ui commands
+  - [ ] restarts the python server when changes happen to the files
 - [ ] Basic User / AUTH support
 - [ ] Add user groups / permissions, ACLs
 - [ ] Set up secrets, use ENV or something so developers can avoid secrets in repo and store their own
-- [ ] Start work on deployment to AWS
+- [ ] Start work on deployment to AWS.
+
+
+# Issues
+
+# Room For Improvement
+
+- Take a look at security, user for docker images, etc.
