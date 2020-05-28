@@ -14,5 +14,5 @@ COPY ${SCPATH}/ .
 RUN npm install && npm run build
 
 USER node
-CMD ["npm", "start"]
 HEALTHCHECK CMD ["wget", "-q", "localhost:3000"]
+CMD ["npm", "start"]

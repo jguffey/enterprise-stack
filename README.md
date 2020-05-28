@@ -50,7 +50,7 @@ where {id} is replaced with your running container
   - [x] for marketing
   - [x] for spa
   - [ ] for database
-  - [ ] for api
+  - [~] for api
 - [ ] Connect the Web SPA to the backend service
 - [ ] Set up a development docker-compose script that
   - [ ] supports hot reloading for the ui commands
@@ -62,6 +62,8 @@ where {id} is replaced with your running container
 
 
 # Issues
+
+- SPA healthcheck doesn't seem to run correctly.
 
 # Room For Improvement
 

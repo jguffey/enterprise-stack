@@ -20,10 +20,12 @@ services:
   #   # TODO, choose service, mount db volume
   #   networks:
   #     - enterprise
-  # server:
-  #   # TODO choose good python base, load app, connect DB
-  #   networks:
-  #     - enterprise
+  server:
+    # TODO choose good python base, load app, connect DB
+    build:
+      context: ../backend/app
+    networks:
+      - enterprise
   # TODO: Tools will actually corrospond 1:1 with services here.
   # TODO(cont.): For example, a message bus would be a standalone service.
 networks:
