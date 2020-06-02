@@ -50,7 +50,7 @@ where {id} is replaced with your running container
   - [x] for marketing
   - [x] for spa
   - [ ] for database
-  - [~] for api
+  - [x] for api
 - [ ] Connect the Web SPA to the backend service
 - [ ] Set up a development docker-compose script that
   - [ ] supports hot reloading for the ui commands
@@ -63,7 +63,9 @@ where {id} is replaced with your running container
 
 # Issues
 
-- SPA healthcheck doesn't seem to run correctly.
+- SPA health check doesn't seem to run correctly.
+- Backend structure is annoying, app/app? That sucks!
+  - I think I'll have to find and use a different flask image.
 
 # Room For Improvement
 

@@ -23,7 +23,9 @@ services:
   server:
     # TODO choose good python base, load app, connect DB
     build:
-      context: ../backend/app
+      context: ../backend
+    ports:
+      - 8000:80
     networks:
       - enterprise
   # TODO: Tools will actually corrospond 1:1 with services here.
