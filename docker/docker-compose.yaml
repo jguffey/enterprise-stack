@@ -5,6 +5,8 @@ services:
       context: ../ui/marketing
     networks:
       - enterprise
+    domainname: marketing.dev
+    hostname: www
     ports:
       - 8080:8080
     restart: unless-stopped
@@ -13,6 +15,8 @@ services:
       context: ../ui/spa
     networks:
       - enterprise
+    domainname: app.dev
+    hostname: www
     ports:
       - 8081:3000
     # For some reason, the container is running on port, but port not being exposed.
@@ -28,6 +32,8 @@ services:
       - 8000:80
     networks:
       - enterprise
+    domainname: api.dev
+    hostname: www
   # TODO: Tools will actually corrospond 1:1 with services here.
   # TODO(cont.): For example, a message bus would be a standalone service.
 networks:

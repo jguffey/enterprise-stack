@@ -8,3 +8,4 @@ COPY ./requirements.txt /var/www/requirements.txt
 COPY ./app /app
 
 RUN pip install -r /var/www/requirements.txt
+HEALTHCHECK CMD ["wget", "-q", "localhost:80"]

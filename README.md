@@ -51,7 +51,9 @@ where {id} is replaced with your running container
   - [x] for spa
   - [ ] for database
   - [x] for api
+- [ ] Get Healthchecks working for all the above services
 - [ ] Connect the Web SPA to the backend service
+  - [ ] Need a [DNS service](https://medium.com/@juan_cortes/local-domains-through-nginx-proxy-and-docker-13d97ee8c010)
 - [ ] Set up a development docker-compose script that
   - [ ] supports hot reloading for the ui commands
   - [ ] restarts the python server when changes happen to the files
@@ -64,9 +66,10 @@ where {id} is replaced with your running container
 # Issues
 
 - SPA health check doesn't seem to run correctly.
-- Backend structure is annoying, app/app? That sucks!
-  - I think I'll have to find and use a different flask image.
+  - Theory was that the CMD wasn't returning control back from the run scropt, but now, using pm2 to get this to run in the background, I'm still having the issue.
 
 # Room For Improvement
 
 - Take a look at security, user for docker images, etc.
+- Backend structure is annoying, app/app? That sucks!
+  - I think I'll have to find and use a different flask image.
