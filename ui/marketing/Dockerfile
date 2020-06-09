@@ -24,4 +24,4 @@ COPY --from=builder  /app/public /usr/share/nginx/html/
 EXPOSE 8080
 
 # CMD ["nginx"]
-HEALTHCHECK CMD [ "wget", "-q", "localhost:8080" ]
+HEALTHCHECK CMD wget -q --tries=1 --spider http://localhost:8080 || exit 1
