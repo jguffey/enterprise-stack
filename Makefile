@@ -10,6 +10,9 @@ down: $(DOCKER_DIR)
 logs: $(DOCKER_DIR)
 	cd $(DOCKER_DIR); docker-compose logs -f -t
 
+bash_spa:
+	cd $(DOCKER_DIR); docker exec -it docker_spa_1 /bin/sh
+
 help:
 	@echo "\
 	The Enterprise Web App Skeleton:\n\n\
@@ -21,4 +24,5 @@ help:
 	# make ui - Start the Singlepage web app server only\n\
 	make logs - Start logging Docker output\n\
 	make down - Bring all/any services down\n\
+	make bash_spa - Start shell in the spa app\n\
 	"
