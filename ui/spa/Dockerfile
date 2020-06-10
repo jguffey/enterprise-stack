@@ -15,4 +15,5 @@ COPY ${SCPATH}/ .
 RUN npm install && npm run build
 
 CMD ["npm", "run", "server"]
+ENV VIRTUAL_HOST dev.app.local
 HEALTHCHECK CMD wget -q --tries=1 --spider http://localhost:3000 || exit 1

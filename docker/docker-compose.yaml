@@ -5,20 +5,22 @@ services:
       context: ../ui/marketing
     networks:
       - enterprise
-    domainname: marketing.dev
-    hostname: www
     ports:
       - 8080:8080
     restart: unless-stopped
+    environment:
+      - VIRTUAL_PORT=80
+      - VIRTUAL_HOST=marketing.app.local
   spa:
     build:
       context: ../ui/spa
     networks:
       - enterprise
-    domainname: app.dev
-    hostname: www
     ports:
       - 8081:3000
+    environment:
+      - VIRTUAL_PORT=80
+      - VIRTUAL_HOST=dev.app.local
     # For some reason, the container is running on port, but port not being exposed.
   # db:
   #   # TODO, choose service, mount db volume
@@ -29,11 +31,21 @@ services:
     build:
       context: ../backend
     ports:
-      - 8000:80
+      - 8001:80
     networks:
       - enterprise
-    domainname: api.dev
-    hostname: www
+    environment:
+      - VIRTUAL_PORT=80
+      - VIRTUAL_HOST=api.app.local
+  # dns:
+  #   build:
+  #     context: ../services/dns
+  #   volumes:
+  #     - /var/run/docker.sock:/tmp/docker.sock:ro
+  #   ports:
+  #     - 8000:80
+    # networks:
+    #   - enterprise
   # TODO: Tools will actually corrospond 1:1 with services here.
   # TODO(cont.): For example, a message bus would be a standalone service.
 networks:
