@@ -12,7 +12,8 @@ WORKDIR ${AP}
 # Breaks here, no package.json exists!
 COPY ${SCPATH}/ .
 
-RUN npm install && npm run build
+RUN npm install
+RUN npm run build
 
 CMD ["npm", "run", "server"]
 ENV VIRTUAL_HOST dev.app.local

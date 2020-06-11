@@ -22,9 +22,6 @@ bash_marketing:
 bash_server:
 	cd $(DOCKER_DIR); docker exec -it $(SERVER_NAME) /bin/bash
 
-dns_server:
-	@echo "Need to move this to docker-compose"
-	cd $(DOCKER_DIR); docker run -d -p 80:80 --net docker_enterprise -v /var/run/docker.sock:/tmp/docker.sock jwilder/nginx-proxy
 
 help:
 	@echo "\

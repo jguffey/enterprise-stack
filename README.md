@@ -51,9 +51,9 @@ where {id} is replaced with your running container
   - [x] for spa
   - [ ] for database
   - [x] for api
-- [ ] Get Healthchecks working for all the above services
-- [ ] Connect the Web SPA to the backend service
-  - [ ] Need a [DNS service](https://medium.com/@juan_cortes/local-domains-through-nginx-proxy-and-docker-13d97ee8c010)
+- [x] Get Healthchecks working for all the above services
+- [x] Connect the Web SPA to the backend service
+  - [x] Need a [DNS service](https://medium.com/@juan_cortes/local-domains-through-nginx-proxy-and-docker-13d97ee8c010)
 - [ ] Set up a development docker-compose script that
   - [ ] supports hot reloading for the ui commands
   - [ ] restarts the python server when changes happen to the files

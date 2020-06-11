@@ -24,5 +24,4 @@ COPY --from=builder  /app/public /usr/share/nginx/html/
 EXPOSE 8080
 
 # CMD ["nginx"]
-ENV VIRTUAL_HOST dev.app.local
 HEALTHCHECK CMD wget -q --tries=1 --spider http://localhost:8080 || exit 1
