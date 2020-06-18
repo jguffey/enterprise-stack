@@ -22,7 +22,6 @@ bash_marketing:
 bash_server:
 	cd $(DOCKER_DIR); docker exec -it $(SERVER_NAME) /bin/bash
 
-
 help:
 	@echo "\
 	The Enterprise Web App Skeleton:\n\n\

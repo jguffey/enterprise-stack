@@ -46,7 +46,7 @@ where {id} is replaced with your running container
 ```
 
 # TODO
-- [ ] Set up Dockerfiles
+- [~] Set up Dockerfiles
   - [x] for marketing
   - [x] for spa
   - [ ] for database
@@ -54,22 +54,22 @@ where {id} is replaced with your running container
 - [x] Get Healthchecks working for all the above services
 - [x] Connect the Web SPA to the backend service
   - [x] Need a [DNS service](https://medium.com/@juan_cortes/local-domains-through-nginx-proxy-and-docker-13d97ee8c010)
-- [ ] Set up a development docker-compose script that
-  - [ ] supports hot reloading for the ui commands
-  - [ ] restarts the python server when changes happen to the files
 - [ ] Basic User / AUTH support
 - [ ] Add user groups / permissions, ACLs
 - [ ] Set up secrets, use ENV or something so developers can avoid secrets in repo and store their own
+- [ ] Set up a development docker-compose script that
+  - [ ] supports hot reloading for the ui commands
+  - [ ] restarts the python server when changes happen to the files
 - [ ] Start work on deployment to AWS.
 
 
 # Issues
 
-- SPA health check doesn't seem to run correctly.
-  - Theory was that the CMD wasn't returning control back from the run scropt, but now, using pm2 to get this to run in the background, I'm still having the issue.
 
 # Room For Improvement
 
 - Take a look at security, user for docker images, etc.
 - Backend structure is annoying, app/app? That sucks!
   - I think I'll have to find and use a different flask image.
+- DNS service, how does it work, what can we improve
+  - Have makefile add hostname entries
