@@ -45,6 +45,17 @@ where {id} is replaced with your running container
     └── spa (single page web application, UI for the app)
 ```
 
+# DNS
+
+You need the following entries in your /etc/hosts file for this to work properly.
+
+```
+127.0.0.1 dev.app.local
+127.0.0.1 api.app.local
+127.0.0.1 marketing.app.local
+127.0.0.1 db.app.local
+```
+
 # TODO
 - [~] Set up Dockerfiles
   - [x] for marketing
@@ -54,6 +65,7 @@ where {id} is replaced with your running container
 - [x] Get Healthchecks working for all the above services
 - [x] Connect the Web SPA to the backend service
   - [x] Need a [DNS service](https://medium.com/@juan_cortes/local-domains-through-nginx-proxy-and-docker-13d97ee8c010)
+  - [ ] Need to set up CORS
 - [ ] Basic User / AUTH support
 - [ ] Add user groups / permissions, ACLs
 - [ ] Set up secrets, use ENV or something so developers can avoid secrets in repo and store their own

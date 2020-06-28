@@ -52,6 +52,9 @@ services:
       - ../services/db/postgres:/var/lib/postgresql/data
     ports:
       - 5432:5432
+    environment:
+      - VIRTUAL_PORT=5432
+      - VIRTUAL_HOST=dp.app.local
   # TODO: Tools will actually corrospond 1:1 with services here.
   # TODO(cont.): For example, a message bus would be a standalone service.
 networks:

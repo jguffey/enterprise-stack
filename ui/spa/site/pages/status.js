@@ -2,9 +2,9 @@ import { useState, useEffect } from 'react';
 
 const SERVICE_STATUS = {
   DOWN: "Down",
-  UP: "UP",
+  UP: "Up",
   LOADING: "Loading",
-  UNKNOWN: "Unknown",
+  INITIAL: "Starting",
 };
 
 const URLS = {
@@ -23,26 +23,30 @@ export default function StatusPage() {
 };
 
 const ServiceStatus = ({ serviceAddress }) => {
-  const [serviceStatus, setServiceStatus] = useState(SERVICE_STATUS.UNKNOWN);
-
+  const [serviceStatus, setServiceStatus] = useState(SERVICE_STATUS.INITIAL);
   useEffect(() => {
-    setServiceStatus(SERVICE_STATUS.LOADING);
-    fetch(serviceAddress)
-      .then(response => {
-        if(response.status == 200) {
-          setServiceStatus(SERVICE_STATUS.UP);
-        } else {
+    if (serviceStatus === SERVICE_STATUS.INITIAL) {
+      setServiceStatus(SERVICE_STATUS.LOADING);
+      fetch(serviceAddress)
+        .then(response => {
+          if(response.status == 200) {
+            setServiceStatus(SERVICE_STATUS.UP);
+          } else {
+            setServiceStatus(SERVICE_STATUS.DOWN);
+          }
+        })
+        .catch(e => {
           setServiceStatus(SERVICE_STATUS.DOWN);
-        }
-      })
-      .catch(e => {
-        setServiceStatus(SERVICE_STATUS.DOWN);
-      })
-  });
+        })
+    }
+  }, [serviceStatus]);
 
   return (
-    <p>
-      {`${serviceAddress} : ${serviceStatus}`}
+    <p key={serviceAddress}>
+      <a href={serviceAddress}>
+        {serviceAddress}
+      </a>
+      {` : ${serviceStatus}}
     </p>
   );
 };
