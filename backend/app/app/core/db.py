@@ -1,5 +1,6 @@
 from flask_sqlalchemy import SQLAlchemy
 from flask.cli import with_appcontext
+from click import command
 
 from ..main import app
 

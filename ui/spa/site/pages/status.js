@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, Fragment } from 'react';
 
 const SERVICE_STATUS = {
   DOWN: "Down",
@@ -46,7 +46,9 @@ const ServiceStatus = ({ serviceAddress }) => {
       <a href={serviceAddress}>
         {serviceAddress}
       </a>
-      {` : ${serviceStatus}}
+      <Fragment>
+        {` : ${serviceStatus}`}
+      </Fragment>
     </p>
   );
 };

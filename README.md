@@ -60,18 +60,18 @@ You need the following entries in your /etc/hosts file for this to work properly
 - [~] Set up Dockerfiles
   - [x] for marketing
   - [x] for spa
-  - [ ] for database
+  - [x] for database
   - [x] for api
 - [x] Get Healthchecks working for all the above services
 - [x] Connect the Web SPA to the backend service
   - [x] Need a [DNS service](https://medium.com/@juan_cortes/local-domains-through-nginx-proxy-and-docker-13d97ee8c010)
-  - [ ] Need to set up CORS
+  - [x] Need to set up CORS
+- [ ] Set up a development docker-compose script that
+  - [ ] restarts the python server when changes happen to the files
+  - [ ] supports hot reloading for the ui commands
 - [ ] Basic User / AUTH support
 - [ ] Add user groups / permissions, ACLs
 - [ ] Set up secrets, use ENV or something so developers can avoid secrets in repo and store their own
-- [ ] Set up a development docker-compose script that
-  - [ ] supports hot reloading for the ui commands
-  - [ ] restarts the python server when changes happen to the files
 - [ ] Start work on deployment to AWS.
 
 
