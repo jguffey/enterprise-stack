@@ -6,6 +6,7 @@ SERVER_NAME=docker_server_1
 
 up: $(DOCKER_DIR)
 	cd $(DOCKER_DIR); docker-compose up -d --build
+	open http://dev.app.local/status
 
 down: $(DOCKER_DIR)
 	cd $(DOCKER_DIR); docker-compose down
