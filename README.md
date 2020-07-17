@@ -68,6 +68,8 @@ You need the following entries in your /etc/hosts file for this to work properly
   - [x] Need to set up CORS
 - [ ] Set up a development docker-compose script that
   - [ ] restarts the python server when changes happen to the files
+    - [ ] Detect changes and restart server when file changes.
+    - [ ] mounts core as hosted volume so that changes can happen in host machine.
   - [ ] supports hot reloading for the ui commands
 - [ ] Basic User / AUTH support
 - [ ] Add user groups / permissions, ACLs
