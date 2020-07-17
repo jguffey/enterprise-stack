@@ -76,7 +76,10 @@ You need the following entries in your /etc/hosts file for this to work properly
 
 
 # Issues
+Reload works, but only within the container. So, if you are ssh'd into the server, and touch uwsgi.ini, it will restart.
+However, the files are copied over during build, not mounted as external drives.
 
+Instead of using `touch-reload = /app/app/main.py` in uwsgi, i'm using watchdog, as recommended [here](https://stackoverflow.com/a/49435131/344405). However, it's not yet doing anything of value.
 
 # Room For Improvement
 
