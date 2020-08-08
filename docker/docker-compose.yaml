@@ -32,6 +32,8 @@ services:
     environment:
       - VIRTUAL_PORT=80
       - VIRTUAL_HOST=api.app.local
+    volumes:
+      - ../backend/app:/app
   # SERVICES
   dns:
     # See services/dns/README.md
