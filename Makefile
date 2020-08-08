@@ -4,6 +4,23 @@ SPA_NAME=docker_spa_1
 MARKETING_NAME=docker_marketing_1
 SERVER_NAME=docker_server_1
 
+
+help:
+	@echo "\
+	The Enterprise Web App Skeleton:\n\n\
+	The following commands are available in this Makefile\n\
+	Type 'make [COMMAND]' to execute.\n\n\
+	make up - Start all services\n\
+	# make server - Start the API Server only\n\
+	# make marketing - Start the marketing server only\n\
+	# make ui - Start the Singlepage web app server only\n\
+	make logs - Start logging Docker output\n\
+	make down - Bring all/any services down\n\
+	make bash_spa - Start shell in the spa app\n\
+	make bash_marketing - Start shell in the marketing app\n\
+	make bash_server - Start shell in the server app\n\
+	"
+
 up: $(DOCKER_DIR)
 	cd $(DOCKER_DIR); docker-compose up -d --build
 	open http://dev.app.local/status
@@ -22,19 +39,3 @@ bash_marketing:
 
 bash_server:
 	cd $(DOCKER_DIR); docker exec -it $(SERVER_NAME) /bin/bash
-
-help:
-	@echo "\
-	The Enterprise Web App Skeleton:\n\n\
-	The following commands are available in this Makefile\n\
-	Type 'make [COMMAND]' to execute.\n\n\
-	make up - Start all services\n\
-	# make server - Start the API Server only\n\
-	# make marketing - Start the marketing server only\n\
-	# make ui - Start the Singlepage web app server only\n\
-	make logs - Start logging Docker output\n\
-	make down - Bring all/any services down\n\
-	make bash_spa - Start shell in the spa app\n\
-	make bash_marketing - Start shell in the marketing app\n\
-	make bash_server - Start shell in the server app\n\
-	"
