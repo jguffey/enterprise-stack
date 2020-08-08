@@ -70,8 +70,9 @@ You need the following entries in your /etc/hosts file for this to work properly
   - [x] restarts the python server when changes happen to the files
     - [x] Detect changes and restart server when file changes.
     - [x] mount app/app as hosted volume so that changes can happen in host machine
-  - [ ] supports hot reloading for the ui commands
-    - [ ] Repeat the volume approach (from docker-compose.yaml) in UI code.
+  - [-] supports hot reloading for the ui commands
+    - [ ] Repeat the volume approach (from docker-compose.yaml) in ui/marketing code.
+    - [x] Repeat the volume approach (from docker-compose.yaml) in ui/spa code.
 - [ ] Basic User / AUTH support
 - [ ] Add user groups / permissions, ACLs
 - [ ] Set up secrets, use ENV or something so developers can avoid secrets in repo and store their own

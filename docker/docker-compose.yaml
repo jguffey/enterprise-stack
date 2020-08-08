@@ -22,6 +22,8 @@ services:
     environment:
       - VIRTUAL_PORT=3000
       - VIRTUAL_HOST=dev.app.local
+    volumes:
+      - ../ui/spa/site:/usr/app
   server:
     build:
       context: ../backend

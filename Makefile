@@ -30,7 +30,8 @@ help:
 
 up: $(DOCKER_DIR)
 	cd $(DOCKER_DIR); docker-compose up -d --build
-	open http://dev.app.local/status
+	echo "booting, starting browser when done."
+	sleep 30 && open http://dev.app.local/status &
 
 down: $(DOCKER_DIR)
 	cd $(DOCKER_DIR); docker-compose down
