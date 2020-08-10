@@ -7,7 +7,6 @@ ENV AP /app
 ENV NODE_ENV=production
 
 WORKDIR ${AP}
-# Breaks here, no package.json exists!
 COPY ${SCPATH}/ .
 RUN npm i && npm run build
 

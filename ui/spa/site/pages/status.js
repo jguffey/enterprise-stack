@@ -16,7 +16,7 @@ export default function StatusPage() {
   return (
     <div>
       {
-        Object.values(URLS).map(url => <ServiceStatus serviceAddress={url} />)
+        Object.values(URLS).map(url => <ServiceStatus key={url} serviceAddress={url} />)
       }
     </div>
   );

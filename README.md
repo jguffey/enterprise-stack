@@ -9,6 +9,7 @@ Exploring a complete setup.
 # Setup
 
 ## Node
+
 There's a `.nvmrc` file in the root, so use it with `nvm use` to ensure that
 you are using the right version of node.
 
@@ -57,27 +58,17 @@ You need the following entries in your /etc/hosts file for this to work properly
 ```
 
 # TODO
-- [~] Set up Dockerfiles
-  - [x] for marketing
-  - [x] for spa
-  - [x] for database
-  - [x] for api
+
+- [x] Set up Dockerfiles
 - [x] Get Healthchecks working for all the above services
 - [x] Connect the Web SPA to the backend service
   - [x] Need a [DNS service](https://medium.com/@juan_cortes/local-domains-through-nginx-proxy-and-docker-13d97ee8c010)
   - [x] Need to set up CORS
-- [-] Set up a development docker-compose script that
-  - [x] restarts the python server when changes happen to the files
-    - [x] Detect changes and restart server when file changes.
-    - [x] mount app/app as hosted volume so that changes can happen in host machine
-  - [-] supports hot reloading for the ui commands
-    - [ ] Repeat the volume approach (from docker-compose.yaml) in ui/marketing code.
-    - [x] Repeat the volume approach (from docker-compose.yaml) in ui/spa code.
+- [x] Set up a development docker-compose script that auto-restarts on save
 - [ ] Basic User / AUTH support
 - [ ] Add user groups / permissions, ACLs
 - [ ] Set up secrets, use ENV or something so developers can avoid secrets in repo and store their own
 - [ ] Start work on deployment to AWS.
-
 
 # Issues
 

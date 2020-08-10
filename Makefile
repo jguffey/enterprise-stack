@@ -1,5 +1,6 @@
 # See https://makefiletutorial.com/
 DOCKER_DIR=docker
+MARKETING_DIR=ui/marketing/site
 SPA_NAME=docker_spa_1
 MARKETING_NAME=docker_marketing_1
 SERVER_NAME=docker_server_1
@@ -20,6 +21,8 @@ help:
 	make bash_marketing - Start shell in the marketing app\n\
 	make bash - Shortcut to bash_server\n\
 	make bash_server - Start shell in the server app\n\
+	make marketing-build - install dependencies for marketing\n\
+	make marketing - run the marketing site\n\
 	\n\
 	Make sure that the following entires are in your /etc/hosts file:\n\
 	127.0.0.1 dev.app.local\n\
@@ -38,6 +41,13 @@ down: $(DOCKER_DIR)
 
 logs: $(DOCKER_DIR)
 	cd $(DOCKER_DIR); docker-compose logs -f -t
+
+
+marketing-build: $(MARKETING_DIR)/package-lock.json $(MARKETING_DIR)/node_modules
+	cd $(MARKETING_DIR) && npm i
+
+marketing:
+	cd $(MARKETING_DIR) && npm run start
 
 bash_spa:
 	cd $(DOCKER_DIR); docker exec -it $(SPA_NAME) /bin/sh
