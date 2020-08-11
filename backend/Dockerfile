@@ -1,6 +1,7 @@
 FROM python:3
 
 ENV PYTHONUNBUFFERED 1
+ENV POSTGRES_PASSWORD postgres
 RUN mkdir /code
 WORKDIR /code
 COPY requirements.txt /code/
@@ -16,3 +17,4 @@ COPY ./app /code/
 EXPOSE 80
 ENV VIRTUAL_HOST dev.app.local
 HEALTHCHECK CMD wget -q --tries=1 --spider http://localhost || exit 1
+CMD python manage.py runserver 0.0.0.0:8000

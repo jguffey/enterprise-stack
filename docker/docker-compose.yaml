@@ -36,6 +36,8 @@ services:
       - VIRTUAL_HOST=api.app.local
     volumes:
       - ../backend/app:/app
+    depends_on: 
+      - db
   # SERVICES
   dns:
     # See services/dns/README.md
