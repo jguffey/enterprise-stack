@@ -65,6 +65,7 @@ You need the following entries in your /etc/hosts file for this to work properly
   - [x] Need a [DNS service](https://medium.com/@juan_cortes/local-domains-through-nginx-proxy-and-docker-13d97ee8c010)
   - [x] Need to set up CORS
 - [x] Set up a development docker-compose script that auto-restarts on save
+- [ ] Consider switching to Django from flask!
 - [ ] Basic User / AUTH support
 - [ ] Add user groups / permissions, ACLs
 - [ ] Set up secrets, use ENV or something so developers can avoid secrets in repo and store their own
