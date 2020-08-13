@@ -14,8 +14,8 @@ you can now access the site at [http://localhost:8000/](http://localhost:8000/).
 
 # To Deploy
 
-The plan is to use a Docker container optimized to host a static build of this
-side. From the git root of this project, there will be instructions for running
+This project uses a Docker container optimized to host a static build of this
+site. From the git root of this project, there will be instructions for running
 the docker-compose project. Ideally, this marketing site will be a multi stage
 build, wherein the first stage compiles this site, and the second stage is a
 very thin layer that simply serves static sites (try a thin apache web image).

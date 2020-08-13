@@ -42,7 +42,6 @@ down: $(DOCKER_DIR)
 logs: $(DOCKER_DIR)
 	cd $(DOCKER_DIR); docker-compose logs -f -t
 
-
 marketing-build: $(MARKETING_DIR)/package-lock.json $(MARKETING_DIR)/node_modules
 	cd $(MARKETING_DIR) && npm i
 
