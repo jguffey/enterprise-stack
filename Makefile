@@ -4,6 +4,7 @@ MARKETING_DIR=ui/marketing/site
 SPA_NAME=docker_spa_1
 MARKETING_NAME=docker_marketing_1
 SERVER_NAME=docker_server_1
+SERVER_DIR=/python/code
 
 .PHONY: help
 help:
@@ -56,6 +57,9 @@ bash_marketing:
 
 bash: # TODO, figure out how makefile aliases work
 	cd $(DOCKER_DIR); docker exec -it $(SERVER_NAME) /bin/bash
+
+shell: # TODO, figure out how makefile aliases work
+	cd $(DOCKER_DIR); docker exec -it $(SERVER_NAME) python $(SERVER_DIR)/manage.py shell_plus
 
 bash_server:
 	cd $(DOCKER_DIR); docker exec -it $(SERVER_NAME) /bin/bash

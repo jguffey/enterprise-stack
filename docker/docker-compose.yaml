@@ -32,13 +32,13 @@ services:
     networks:
       - enterprise
     environment:
-      - VIRTUAL_PORT=80
+      - VIRTUAL_PORT=8000
       - VIRTUAL_HOST=api.app.local
     volumes:
-      - ../backend/code:/code
+      - ../backend/code:/python/code
     depends_on:
       - db
-    command: python /code/manage.py runserver 0.0.0.0:8000
+    command: python /python/code/manage.py runserver 0.0.0.0:8000
   # SERVICES
   dns:
     # See services/dns/README.md
