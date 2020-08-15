@@ -67,6 +67,8 @@ You need the following entries in your /etc/hosts file for this to work properly
 - [x] Set up a development docker-compose script that auto-restarts on save
 - [x] Consider switching to Django from flask!
 - [ ] Set up secrets, use ENV or something so developers can avoid secrets in repo and store their own
+  - [ ] hide Django secrets
+  - [ ] Set up local settings files for django
 - [ ] Start work on deployment.
   - [ ] Determine deployment strategy
   - [ ] use the docker-containers to deploy containers to production, or:
