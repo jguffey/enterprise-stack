@@ -4,3 +4,4 @@ __pycache__
 .vscode
 services/db/postgres/*
 .env
+.idea
