@@ -16,10 +16,10 @@ you can now access the site at [http://localhost:8000/](http://localhost:8000/).
 
 This project uses a Docker container optimized to host a static build of this
 site. From the git root of this project, there will be instructions for running
-the docker-compose project. Ideally, this marketing site will be a multi stage
+the docker-compose project. This marketing site is a multi stage
 build, wherein the first stage compiles this site, and the second stage is a
-very thin layer that simply serves static sites (try a thin apache web image).
+very thin layer that simply serves static sites (a thin apache web image).
 
-The backup approach is have a deploy script that would auto-push the marketing
-site to different AWS S3 buckets depending on which environment deploying to
-(stage, master ,dev).
+# Development
+
+Unlike the other applications in this repo, this one doesn't support auto-reloading during development via docker. This is because of the design of the docker-image, which is a 2-stage process. Reproducing this process on every file save would take too long to be useful, instead, use `gatsby` as it's developers intended, run it locally! When the application is ready to deploy the docker-container pathway will be used and therefore a small final image will serve this site.

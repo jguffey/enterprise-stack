@@ -1,0 +1,5 @@
+# How was this project created?
+
+It started with a [couple](IMG_0037.PNG) [sketches](IMG_0038.PNG) I created one weekend, when thinking about some of the basic services that I would need if I wanted to build a robust technology product. I knew that docker containers would offer the flexibility and developer-experience I was after, so I started reading about docker and docker-compose.
+
+After defining the basic services, their structure in relation to each other, and some basic file-layout designs, I started by creating each of the main three services (`marketing`, `spa`, and `server`) in isolation. I used the `dns` service to start a local dns server and connect these services together, confirming that they can each see one another within their environments, and the host environment could connect to all three of them. I then set up a database service to back the `server`, connected it, and then added support for auto-restarting these services whenever a developer changes any local files.

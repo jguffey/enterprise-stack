@@ -65,11 +65,14 @@ You need the following entries in your /etc/hosts file for this to work properly
   - [x] Need a [DNS service](https://medium.com/@juan_cortes/local-domains-through-nginx-proxy-and-docker-13d97ee8c010)
   - [x] Need to set up CORS
 - [x] Set up a development docker-compose script that auto-restarts on save
-- [ ] Consider switching to Django from flask!
+- [x] Consider switching to Django from flask!
+- [ ] Set up secrets, use ENV or something so developers can avoid secrets in repo and store their own
+- [ ] Start work on deployment.
+  - [ ] Determine deployment strategy
+  - [ ] use the docker-containers to deploy containers to production, or:
+  - [ ] replicate the structure in an AWS environment
 - [ ] Basic User / AUTH support
 - [ ] Add user groups / permissions, ACLs
-- [ ] Set up secrets, use ENV or something so developers can avoid secrets in repo and store their own
-- [ ] Start work on deployment to AWS.
 
 # Issues
 
@@ -81,3 +84,24 @@ You need the following entries in your /etc/hosts file for this to work properly
   - I think I'll have to find and use a different flask image.
 - DNS service, how does it work, what can we improve
   - Have makefile add hostname entries
+
+## Infrastructure as code
+
+Some of the steps here were rather manual. If we have any steps, we need to document
+those steps, or turn it into a setup script.
+
+### Manual steps that need to be reconciled
+
+The django folder structure was set up via django-admin commands,
+`startproject` and `startapp`. That generated the folders here, but
+that process was manual. What do these steps do? Would we need to
+recreate these steps in the future for a clean setup process?
+
+Also, the marketing and spa service versions are heavily dependent on when
+we set them up. Running these setups later may yield newer versions of
+dependencies, etc. If we were to start again from scratch, what commands
+would we run, and would that generate different results?
+
+## Documentation
+
+Try to document the path that lead to this codebase. Why the decisions were made?
