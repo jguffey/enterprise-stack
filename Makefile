@@ -59,7 +59,7 @@ bash: # TODO, figure out how makefile aliases work
 	cd $(DOCKER_DIR); docker exec -it $(SERVER_NAME) /bin/bash
 
 shell: # TODO, figure out how makefile aliases work
-	cd $(DOCKER_DIR); docker exec -it $(SERVER_NAME) python $(SERVER_DIR)/manage.py shell_plus
+	cd $(DOCKER_DIR); docker exec -it $(SERVER_NAME) python $(SERVER_DIR)/manage.py shell_plus --settings=app.settings.docker_local
 
 bash_server:
 	cd $(DOCKER_DIR); docker exec -it $(SERVER_NAME) /bin/bash

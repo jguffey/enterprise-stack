@@ -38,7 +38,7 @@ services:
       - ../backend/code:/python/code
     depends_on:
       - db
-    command: python /python/code/manage.py runserver 0.0.0.0:8000
+    command: django-admin runserver 0.0.0.0:8000 --settings=app.settings.docker_local
   # SERVICES
   dns:
     # See services/dns/README.md

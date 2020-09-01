@@ -3,7 +3,7 @@ FROM python:3
 ENV PYTHONUNBUFFERED 1
 ENV POSTGRES_PASSWORD postgres
 RUN mkdir -p /python/code
-WORKDIR /code
+WORKDIR /python/code
 COPY requirements.txt /python/requirements.txt
 
 # RUN apk --update add bash nano
@@ -16,4 +16,7 @@ RUN pip install -r /python/requirements.txt
 COPY ./code /python/code/
 EXPOSE 80
 ENV VIRTUAL_HOST dev.app.local
+
+ENV PYTHONPATH=$PYTHONPATH:$PWD
+ENV DJANGO_SETTINGS_MODULE settings.docker_local
 HEALTHCHECK CMD wget -q --tries=1 --spider http://localhost || exit 1
